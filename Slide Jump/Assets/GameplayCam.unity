@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 460447478}
   m_Layer: 0
   m_Name: Wall (2)
-  m_TagString: Wall
+  m_TagString: WallR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -429,9 +429,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460447477}
-  m_LocalRotation: {x: 0.020459358, y: 0.7158288, z: 0.019940956, w: 0.69769126}
-  m_LocalPosition: {x: 5.0924, y: -1.6802, z: 4.8141003}
-  m_LocalScale: {x: 0.71855, y: 0.80864, z: 1}
+  m_LocalRotation: {x: 0.020459354, y: 0.7158288, z: 0.019940952, w: 0.69769126}
+  m_LocalPosition: {x: 4.9624004, y: -1.3802, z: 2.6941004}
+  m_LocalScale: {x: 0.7185501, y: 0.80863994, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -1058,13 +1058,13 @@ GameObject:
   - component: {fileID: 1249707847}
   m_Layer: 0
   m_Name: Wall (1)
-  m_TagString: Wall
+  m_TagString: WallL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1249707847
-MeshCollider:
+--- !u!65 &1249707847
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1073,10 +1073,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1342906618}
+  serializedVersion: 2
+  m_Size: {x: 5.6458087, y: 10.824231, z: 1.6693549}
+  m_Center: {x: -1.7013295, y: -0.29278323, z: 0.057204776}
 --- !u!33 &1249707848
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -1350,7 +1349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249707846}
   m_LocalRotation: {x: 0.020459358, y: 0.7158288, z: 0.019940956, w: 0.69769126}
-  m_LocalPosition: {x: -4.56, y: -1.68, z: 5.06}
+  m_LocalPosition: {x: -4.72, y: -1.38, z: 2.94}
   m_LocalScale: {x: 0.71855, y: 0.80864, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1532,6 +1531,7 @@ GameObject:
   - component: {fileID: 1718312485}
   - component: {fileID: 1718312484}
   - component: {fileID: 1718312483}
+  - component: {fileID: 1718312487}
   m_Layer: 3
   m_Name: Npole
   m_TagString: Player
@@ -1609,10 +1609,22 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718312482}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.62900376, y: -1.23, z: 1.1806362}
+  m_LocalPosition: {x: 0.62900376, y: -1.23, z: 3.0600002}
   m_LocalScale: {x: 1.1, y: 0.43869817, z: 1}
   m_Children:
   - {fileID: 549511217}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!114 &1718312487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718312482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5175841fb8bfde64e8ac1bf27576a7d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
