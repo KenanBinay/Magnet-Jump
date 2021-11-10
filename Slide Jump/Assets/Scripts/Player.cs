@@ -5,8 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    float scoreRate = 1.5f;
-    float scorespeed = 0.0f;
+    
 
     void Start()
     {

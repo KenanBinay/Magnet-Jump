@@ -7,11 +7,6 @@ public class Controller : MonoBehaviour
     private bool tap, swipeLeft, swipeRight, isDraging;
     private Vector2 startTouch, swipeDelta;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         tap = swipeLeft = swipeRight = false;
@@ -60,17 +55,13 @@ public class Controller : MonoBehaviour
             }
         }
 
-        if (swipeDelta.magnitude > 125)
+        if (swipeDelta.magnitude > 360)
         {
             float x = swipeDelta.x;
          
-                if (x < 0)
-                {
-                    swipeLeft = true;
-                }
-                else
-                    swipeRight = true;
-           
+            if (x < 0) { swipeLeft = true; }      
+            else { swipeRight = true; }    
+            
             Reset();
         }
     }
@@ -79,6 +70,7 @@ public class Controller : MonoBehaviour
     {
         startTouch = swipeDelta = Vector2.zero;
         isDraging = false;
+      
     }
 
     public Vector2 SwipeDelta { get { return swipeDelta; } }
