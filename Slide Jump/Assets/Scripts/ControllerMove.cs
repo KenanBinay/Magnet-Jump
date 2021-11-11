@@ -30,32 +30,46 @@ public class ControllerMove : MonoBehaviour
             {
                 Player.wallControlL =Player.wallControlL= 0f;
                 controlR = 0f;
-                if (controlL != 1f)
-                {            
-                
+
+            if (Player.wallControlL == 1f)
+            {
+                controlR = 0f;
+                controlL = 1f;
+            }
+
+            if (controlL != 1f)
+            {
+
                 //Magnet.transform.position = new Vector3(-2.8f, -2.1f, 4.02f);
                 Vector3 directionL = new Vector3(-180f, 0f, 0f);
-                   
-                StartCoroutine(RotateObject(Magnet, directionL, 0.3f));                 
-                 Debug.Log("Left");               
-                }
-                controlL = 1f;
-            }                  
 
+                StartCoroutine(RotateObject(Magnet, directionL, 0.3f));
+                Debug.Log("Left");
+            }
+            controlL = 1f;
+            }                  
+  
             if (swipeControls.SwipeRight)
             {
                 Player.wallControlL = Player.wallControlL = 0f;
-                controlL = 0f;        
-                if (controlR != 1)
-                {
-              //  Magnet.transform.position = new Vector3(3.3f, -2.1f, 3.87f);
+                controlL = 0f;
+
+            if (Player.wallControlR == 1f)
+            {
+                controlL = 0f;
+                controlR = 1f;
+            }
+
+            if (controlR != 1)
+            {
+                //  Magnet.transform.position = new Vector3(3.3f, -2.1f, 3.87f);
                 Vector3 directionR = new Vector3(180f, 0f, 0f);
 
                 StartCoroutine(RotateObject(Magnet, directionR, 0.3f));
                 Debug.Log("Right");
-                }
-                controlR = 1f;
-            }           
+            }
+            controlR = 1f;
+        }           
     }
     IEnumerator RotateObject(GameObject gameObjectToMove, Vector3 eulerAngles, float duration)
     {
@@ -81,10 +95,9 @@ public class ControllerMove : MonoBehaviour
             }
             if (controlR == 1f)
             {
-                if (Player.wallControlR != 1)
-                    Magnet.transform.position += Vector3.right * horizontalSpeed * Time.deltaTime;
+                 if(Player.wallControlR != 1)
+                 Magnet.transform.position += Vector3.right * horizontalSpeed * Time.deltaTime;
             }
-
             yield return null;
         }
         rotating = false;

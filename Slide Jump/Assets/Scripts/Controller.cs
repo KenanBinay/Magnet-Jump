@@ -55,7 +55,7 @@ public class Controller : MonoBehaviour
             }
         }
 
-        if (swipeDelta.magnitude > 360)
+        if (swipeDelta.magnitude > 126)
         {
             float x = swipeDelta.x;
          
