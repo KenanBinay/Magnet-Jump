@@ -5,11 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    
+   public static float wallControlL, wallControlR;
 
     void Start()
     {
-        
+        wallControlL = wallControlR = 0f;
     }
    
     void Update()
@@ -20,11 +20,17 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("WallL"))
         {
-            Debug.Log("WallL");
+            wallControlL = 1f;
+            wallControlR = 0f;
+            Debug.Log("WallL = "+wallControlL);
+            Debug.Log("WallR = " + wallControlR);
         }
         if (collision.gameObject.CompareTag("WallR"))
         {
-            Debug.Log("WallR");
+            wallControlR = 1f;
+            wallControlL = 0f;
+            Debug.Log("WallR = "+wallControlR);
+            Debug.Log("WallL = " + wallControlL);
         }
     }
  
