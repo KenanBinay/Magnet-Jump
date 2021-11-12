@@ -12,9 +12,9 @@ public class Player : MonoBehaviour
         wallControlL = wallControlR = 0f;
     }
    
-    void Update()
+    void LateUpdate()
     {
-        
+       // wallControlL = wallControlR = 0f;
     }
     private void OnCollisionEnter(Collision collision)
     {
