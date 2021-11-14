@@ -135,7 +135,8 @@ public class ControllerMove : MonoBehaviour
             gameObjectToMove.transform.eulerAngles = Vector3.Lerp(currentRot, newRot, counter / duration);
             if (controlL == 1f)
             {       
-                  if (player.transform.position.x != 2.6f) { Magnet.transform.position += Vector3.left * horizontalSpeed * Time.deltaTime; }     
+                  if (player.transform.position.x != 2.6f) { Magnet.transform.position += Vector3.left * horizontalSpeed * Time.deltaTime; }
+                Debug.Log("x = " + player.transform.position.x);
                // Magnet.transform.position += Vector3.left * horizontalSpeed * Time.deltaTime; 
             }
             if (controlR == 1f)
