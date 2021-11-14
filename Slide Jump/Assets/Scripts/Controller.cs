@@ -69,12 +69,10 @@ public class Controller : MonoBehaviour
     private void Reset()
     {
         startTouch = swipeDelta = Vector2.zero;
-        isDraging = false;
-      
+        isDraging = false;    
     }
 
     public Vector2 SwipeDelta { get { return swipeDelta; } }
-
     public bool SwipeLeft { get { return swipeLeft; } }
     public bool SwipeRight { get { return swipeRight; } }
 

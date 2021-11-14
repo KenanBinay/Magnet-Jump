@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         wallControlL = wallControlR = 0f;
+        Debug.Log("WallL = " + wallControlL); Debug.Log("WallR = " + wallControlR);
     }
    
     void LateUpdate()
@@ -22,15 +23,13 @@ public class Player : MonoBehaviour
         {
             wallControlL = 1f;
             wallControlR = 0f;
-            Debug.Log("WallL = "+wallControlL);
-            Debug.Log("WallR = " + wallControlR);
+            Debug.Log("WallL = "+wallControlL); Debug.Log("WallR = " + wallControlR);
         }
         if (collision.gameObject.CompareTag("WallR"))
         {
             wallControlR = 1f;
             wallControlL = 0f;
-            Debug.Log("WallR = "+wallControlR);
-            Debug.Log("WallL = " + wallControlL);
+            Debug.Log("WallR = "+wallControlR); Debug.Log("WallL = " + wallControlL);
         }
     }
  
