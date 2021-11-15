@@ -30,7 +30,7 @@ public class ControllerMove : MonoBehaviour
             {
                 if (Player.wallControlL != 1 && Player.wallControlR != 1f)
                 {
-                    Player.wallControlL = Player.wallControlL = 0f;
+     
                     controlR = 0f;
 
                     if (controlL != 1f)
@@ -51,7 +51,7 @@ public class ControllerMove : MonoBehaviour
                 {
                     if (Player.wallControlL != 1)
                     {
-                        Player.wallControlL = Player.wallControlL = 0f;
+    
                         controlR = 0f;
 
                         if (controlL != 1f)
@@ -75,7 +75,7 @@ public class ControllerMove : MonoBehaviour
             {
                 if (Player.wallControlR != 1f && Player.wallControlL != 1f)
                 {
-                    Player.wallControlL = Player.wallControlL = 0f;
+ 
                     controlL = 0f;
 
                     if (controlR != 1)
@@ -97,8 +97,7 @@ public class ControllerMove : MonoBehaviour
                 {
 
                     if (Player.wallControlR != 1f)
-                    {
-                        Player.wallControlL = Player.wallControlL = 0f;
+                    {                  
                         controlL = 0f;
 
                         if (controlR != 1)
