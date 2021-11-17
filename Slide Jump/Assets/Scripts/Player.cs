@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
    
     void LateUpdate()
     {
-       // wallControlL = wallControlR = 0f;
+      //  wallControlL = wallControlR = 0f;
     }
     private void OnCollisionEnter(Collision collision)
     {
