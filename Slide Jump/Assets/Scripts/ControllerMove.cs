@@ -81,6 +81,24 @@ public class ControllerMove : MonoBehaviour
                 }
                 controlL = 1f;
             }
+
+            if (once == 0f)
+            {
+                if (Player.wallControlL != 1 && Player.wallControlR != 1f)
+                {
+                    controlR = 0f;
+
+                    if (controlL != 1f)
+                    {
+                        Vector3 directionL = new Vector3(-180f, 0f, 0f);
+
+                        StartCoroutine(RotateObject(Magnet, directionL, 0.3f));
+                        Debug.Log("Left");
+                    }
+                    controlL = 1f;
+                }
+                once = 1f;
+            }
         }
 
 
@@ -139,6 +157,25 @@ public class ControllerMove : MonoBehaviour
                     Debug.Log("Right");
                 }
                 controlR = 1f;
+            }
+
+            if (once == 0f)
+            {
+                if (Player.wallControlR != 1f && Player.wallControlL != 1f)
+                {
+                    controlL = 0f;
+
+                    if (controlR != 1)
+                    {
+
+                        Vector3 directionR = new Vector3(180f, 0f, 0f);
+
+                        StartCoroutine(RotateObject(Magnet, directionR, 0.3f));
+                        Debug.Log("Right");
+                    }
+                    controlR = 1f;
+                }
+                once = 1f;
             }
         }
 
