@@ -26,7 +26,9 @@ public class ControllerMove : MonoBehaviour
         playerY = player.transform.rotation.y;
         //   Debug.Log("Y= " + playerY);
 
-        if (swipeControls.SwipeLeft)
+        if (rotating == false)
+      {
+            if (swipeControls.SwipeLeft)
         {
             #region movingLMethod1
             /*   if (Player.wallControlR == 1f)
@@ -101,7 +103,7 @@ public class ControllerMove : MonoBehaviour
             }
         }
 
-
+       
 
         if (swipeControls.SwipeRight)
         {
@@ -143,7 +145,7 @@ public class ControllerMove : MonoBehaviour
                //  if (player.transform.position.x <= -2.8f)     
             */
             #endregion
-
+         
             if (Player.wallControlL == 1f)
             {
                 controlL = 0f;
@@ -178,6 +180,9 @@ public class ControllerMove : MonoBehaviour
                 once = 1f;
             }
         }
+
+      }
+
 
 
     }
