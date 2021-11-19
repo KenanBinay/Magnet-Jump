@@ -34,6 +34,4 @@ public class Player : MonoBehaviour
             Debug.Log("WallL = " + wallControlL + " || WallR = " + wallControlR);
         }
     }
- 
-
 }

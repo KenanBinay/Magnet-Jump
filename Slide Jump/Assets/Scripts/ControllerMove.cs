@@ -26,7 +26,7 @@ public class ControllerMove : MonoBehaviour
         playerY = player.transform.rotation.y;
         //   Debug.Log("Y= " + playerY);
 
-        if (rotating == false)
+      if (rotating == false)
       {
             if (swipeControls.SwipeLeft)
         {
@@ -102,8 +102,7 @@ public class ControllerMove : MonoBehaviour
                 once = 1f;
             }
         }
-
-       
+ 
 
         if (swipeControls.SwipeRight)
         {
@@ -182,10 +181,8 @@ public class ControllerMove : MonoBehaviour
         }
 
       }
-
-
-
     }
+
     IEnumerator RotateObject(GameObject gameObjectToMove, Vector3 eulerAngles, float duration)
     {
         if (rotating)
