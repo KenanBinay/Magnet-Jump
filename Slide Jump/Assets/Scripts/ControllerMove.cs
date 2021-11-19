@@ -30,7 +30,7 @@ public class ControllerMove : MonoBehaviour
       {
             if (swipeControls.SwipeLeft)
         {
-            #region movingLMethod1
+            #region movingLMethod1L
             /*   if (Player.wallControlR == 1f)
                  {
                            controlR = 0f;
@@ -106,7 +106,7 @@ public class ControllerMove : MonoBehaviour
 
         if (swipeControls.SwipeRight)
         {
-            #region movingRMethod1
+            #region movingRMethod1R
             /*   if (Player.wallControlL == 1f)
                    {                 
                            controlL = 0f;
