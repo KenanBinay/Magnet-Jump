@@ -15,4 +15,8 @@ public class SpikeMovement : MonoBehaviour
     {
        transform.position -= transform.forward * Time.deltaTime*SpeedCharacter;
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("DestroyWall")) { Destroy(gameObject); }
+    }
 }
