@@ -21,6 +21,7 @@ public class SpikeMovement : MonoBehaviour
         {
             SpeedCharacter = 0f;
             Spike.spawnCntrl = 0f;
+            ControllerMove.rotating = true;
         }
     }
  
