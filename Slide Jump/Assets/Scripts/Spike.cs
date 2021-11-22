@@ -9,7 +9,7 @@ public class Spike : MonoBehaviour
     Vector3 whereToSpawn;
     public float spawnRate;
     public static float nextSpawn = 0.0f;
-
+    public static float spawnCntrl = 1f;
     void Start()
     {
         
@@ -17,16 +17,19 @@ public class Spike : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Time.time > nextSpawn)
+        if (spawnCntrl != 0f)
         {
-            nextSpawn = Time.time + spawnRate;
+            if (Time.time > nextSpawn)
+            {
+                nextSpawn = Time.time + spawnRate;
 
-            Randx = Random.Range(1.81f, -3.24f);
+                Randx = Random.Range(1.81f, -3.24f);
 
-            whereToSpawn = new Vector3(Randx, transform.position.y, transform.position.z);
+                whereToSpawn = new Vector3(Randx, transform.position.y, transform.position.z);
 
-            Instantiate(SpikeObject, whereToSpawn, Quaternion.identity);
-            
+                Instantiate(SpikeObject, whereToSpawn, Quaternion.identity);
+
+            }
         }
     }
 }

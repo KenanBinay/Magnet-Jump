@@ -9,7 +9,6 @@ public class SpikeMovement : MonoBehaviour
     {
         
     }
-
     
     void FixedUpdate()
     {
@@ -18,5 +17,11 @@ public class SpikeMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("DestroyWall")) { Destroy(gameObject); }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            SpeedCharacter = 0f;
+            Spike.spawnCntrl = 0f;
+        }
     }
+ 
 }

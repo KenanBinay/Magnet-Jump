@@ -14,7 +14,7 @@ public class ControllerMove : MonoBehaviour
     float controlR = 0f;
     public float horizontalSpeed=1f;
 
-    bool rotating = false;
+    public static bool rotating = false;
     void Start()
     {
         
