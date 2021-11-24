@@ -6,9 +6,11 @@ public class SpikeMovement : MonoBehaviour
 {
     public static float SpeedCharacter=8f;
     public Rigidbody spike;
+  
     void Start()
     {
         spike.useGravity = false;
+      
     }
     
     void FixedUpdate()

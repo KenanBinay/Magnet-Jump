@@ -41,29 +41,6 @@ public class CamShakeController : MonoBehaviour
 			shakeDuration = 0f;
 			camTransform.localPosition = originalPos;
 		}
-		/*
-		if(Player.SpikeControl==1f)
-		{
-
-			if (shakeDuration > 0)
-			{
-				camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
-
-				shakeDuration -= Time.deltaTime * decreaseFactor;
-			}	
-		}
-		else if(Player.SpikeControl==0f)
-		{
-			StartCoroutine(ShakeCam());
-		}
-*/
+	
 	}
-/*	private IEnumerator ShakeCam()
-	{
-		yield return new WaitForSeconds(0.1f);
-		shakeDuration = 0f;
-		camTransform.localPosition = originalPos;
-
-	}
-	*/	
 }
