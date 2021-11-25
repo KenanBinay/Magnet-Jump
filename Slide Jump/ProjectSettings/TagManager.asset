@@ -8,6 +8,7 @@ TagManager:
   - WallL
   - DestroyWall
   - Spike
+  - SpikeMain
   layers:
   - Default
   - TransparentFX

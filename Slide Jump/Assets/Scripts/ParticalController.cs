@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class ParticalController : MonoBehaviour
 {
-    public GameObject LwallParticle, RwallParticle, SpikeParticle, spikeObject;
+    public GameObject LwallParticle, RwallParticle, SpikeParticle;
     void Start()
     {
         RwallParticle.SetActive(false);
         LwallParticle.SetActive(false);
         SpikeParticle.SetActive(false);
+      
     }
-
+    private void FixedUpdate()
+    {
+         
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Spike"))
-        {      
-            SpikeParticle.transform.position = new Vector2(spikeObject.transform.position.x, -2f);
+        {
             SpikeParticle.SetActive(true);
             StartCoroutine(Control());
         }

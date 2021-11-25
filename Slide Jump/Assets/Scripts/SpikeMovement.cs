@@ -4,18 +4,28 @@ using UnityEngine;
 
 public class SpikeMovement : MonoBehaviour
 {
-    public static float SpeedCharacter=8f;
+    public static float SpeedCharacter = 8f;
     public Rigidbody spike;
-  
+
     void Start()
     {
         spike.useGravity = false;
-      
+
     }
-    
+
     void FixedUpdate()
-    {
-       transform.position -= transform.forward * Time.deltaTime*SpeedCharacter;
+    {    
+        if (Player.Healt <= 0f)
+        {
+            spike.useGravity = true;
+            ControllerMove.rotating = true;
+            Spike.spawnCntrl = 0f;
+            StartCoroutine(HealtZero());
+        }
+        else
+        {
+            transform.position -= transform.forward * Time.deltaTime * SpeedCharacter;
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -35,5 +45,9 @@ public class SpikeMovement : MonoBehaviour
             }
         }
     }
- 
+    private IEnumerator HealtZero()
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
+    }
 }
