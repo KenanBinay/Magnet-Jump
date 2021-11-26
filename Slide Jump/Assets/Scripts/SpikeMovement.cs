@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpikeMovement : MonoBehaviour
 {
     public static float SpeedCharacter = 8f;
-    public Rigidbody spike;
+    public Rigidbody spike,spikeParticle;
 
     void Start()
     {
@@ -42,6 +42,7 @@ public class SpikeMovement : MonoBehaviour
             else if (Player.Healt >= 1f)
             {
                 Destroy(gameObject);
+
             }
         }
     }
@@ -49,5 +50,6 @@ public class SpikeMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         Destroy(gameObject);
+
     }
 }

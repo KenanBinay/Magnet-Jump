@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
-    public GameObject SpikeObject;
+    public GameObject SpikeObject,spikeParticle;
     float Randx;
     Vector3 whereToSpawn;
     public float spawnRate;
@@ -28,7 +28,6 @@ public class Spike : MonoBehaviour
                 whereToSpawn = new Vector3(Randx, transform.position.y, transform.position.z);
 
                 Instantiate(SpikeObject, whereToSpawn, Quaternion.identity);
-
             }
         }
     }
