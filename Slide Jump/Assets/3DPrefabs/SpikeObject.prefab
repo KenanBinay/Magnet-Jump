@@ -32,8 +32,7 @@ Transform:
   m_LocalRotation: {x: 0.000023279998, y: 0.0023824729, z: -0.0048869923, w: 0.9999852}
   m_LocalPosition: {x: 0.26999998, y: -2.01, z: 5.54}
   m_LocalScale: {x: 0.8058602, y: 0.80586046, z: 0.8058602}
-  m_Children:
-  - {fileID: 7976039543630820224}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.004, y: 0.273, z: -0.56}
@@ -345,33 +344,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spike: {fileID: 1560158395838853137}
   spikeParticle: {fileID: 3090842324928594439, guid: 66326b2b0c04ddb499abbfdc4ec13d2e, type: 3}
---- !u!1 &8132084527066458037
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7976039543630820224}
-  m_Layer: 0
-  m_Name: ParticleWaypoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7976039543630820224
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8132084527066458037}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1930858887350907031}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
