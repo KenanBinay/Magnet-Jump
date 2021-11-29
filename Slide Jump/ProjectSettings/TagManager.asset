@@ -10,6 +10,11 @@ TagManager:
   - Spike
   - SpikeMain
   - PartricleSpikeMain
+  - Text1OH
+  - Text2OH
+  - Text3OH
+  - Text4OH
+  - Text5OH
   layers:
   - Default
   - TransparentFX

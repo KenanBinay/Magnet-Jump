@@ -10,19 +10,16 @@ public class OnHitFunTexts : MonoBehaviour
     private int[] values = { 1, 2, 3, 4, 5 };
     int nextText; 
     Vector3 whereToSpawn;
-    public static float SpeedText = 1f;
 
     void Start()
     {
 
     }
 
-
     void FixedUpdate()
     {
-     
+        
     }
-
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -31,54 +28,36 @@ public class OnHitFunTexts : MonoBehaviour
             nextText = values[Random.Range(0, values.Length)];
             randX = Random.Range(-3.2f,4f);
             whereToSpawn = new Vector3(randX, spawnPoint.transform.position.y, spawnPoint.transform.position.z);
-
             Debug.Log("Text = " + nextText);
+
             switch (nextText)
             {
                 case 1:
                     Debug.Log("text1 spawned");
-                    Instantiate(text1, whereToSpawn, Quaternion.identity);
-                    StartCoroutine(endText());
+                    Instantiate(text1, whereToSpawn, Quaternion.identity);           
                     break;
 
                 case 2:
                     Debug.Log("text2 spawned");
                     Instantiate(text2, whereToSpawn, Quaternion.identity);
-                    StartCoroutine(endText());
                     break;
 
                 case 3:
                     Debug.Log("text3 spawned");
-                    Instantiate(text3, whereToSpawn, Quaternion.identity);
-                    StartCoroutine(endText());
+                    Instantiate(text3, whereToSpawn, Quaternion.identity);               
                     break;
 
                 case 4:
                     Debug.Log("text4 spawned");
-                    Instantiate(text4, whereToSpawn, Quaternion.identity);
-                    StartCoroutine(endText());
+                    Instantiate(text4, whereToSpawn, Quaternion.identity);             
                     break;
 
                 case 5:
                     Debug.Log("text5 spawned");
-                    Instantiate(text5, whereToSpawn, Quaternion.identity);
-                    StartCoroutine(endText());
+                    Instantiate(text5, whereToSpawn, Quaternion.identity);    
                     break;
             }
                
         }
-    }
-
-    private IEnumerator endText()
-    {
-        yield return new WaitForSeconds(1f);
-
-            Debug.Log("Texts Refreshed");
-            Destroy(text1);
-            Destroy(text2);
-            Destroy(text3);
-            Destroy(text4);
-            Destroy(text5);
-        
     }
 }
