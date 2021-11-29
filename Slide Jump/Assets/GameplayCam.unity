@@ -973,7 +973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 976979975}
   m_Layer: 0
-  m_Name: OnHitFunTexts
+  m_Name: OnHitFunTextsMainController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

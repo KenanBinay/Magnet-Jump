@@ -11,16 +11,6 @@ public class OnHitFunTexts : MonoBehaviour
     int nextText; 
     Vector3 whereToSpawn;
 
-    void Start()
-    {
-
-    }
-
-    void FixedUpdate()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Spike"))

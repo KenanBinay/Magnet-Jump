@@ -11,7 +11,7 @@ public class ScoreController : MonoBehaviour
     public static float scoreSpeed = 0.0f;
     void Start()
     {
-     //   GameScoreMain.text = GetComponent<TMPro.TextMeshProUGUI>().text;   
+
     }
 
     void FixedUpdate()
