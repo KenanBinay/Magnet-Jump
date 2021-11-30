@@ -7,7 +7,7 @@ public class ScoreController : MonoBehaviour
 {
    [SerializeField] TMPro.TextMeshProUGUI GameScoreMain, HighScore;
     public float ScoreRate;
-    private static float Score,scorePlus=2;
+    public static float Score,scorePlus=2;
     public static float scoreSpeed = 0.0f;
     void Start()
     {
