@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpikeMovement : MonoBehaviour
 {
     public static float SpeedCharacter = 8f;
-    public Rigidbody spike,spikeParticle;
+    public Rigidbody spike;
 
     void Start()
     {

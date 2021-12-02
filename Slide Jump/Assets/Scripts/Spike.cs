@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
-    public GameObject SpikeObject;
+    public GameObject SpikeObject,object2,object3,ExtraHealtObject,ExtraScore;
     float Randx;
     Vector3 whereToSpawn;
     public float spawnRate;
@@ -33,7 +33,16 @@ public class Spike : MonoBehaviour
 
                 if (ScoreController.Score >= 100 && ScoreController.Score <= 400)
                 {
-                    spawnRate = 2.5f;
+                    SpikeMovement.SpeedCharacter = 16;
+                    if (ScoreController.Score >= 144)
+                    {
+                        spawnRate = 2f;
+                    }
+                    else
+                    {
+                        spawnRate = 2.5f;
+                    }
+               
                     int[] valuesM = { 1, 2, 3, 4 };
                     nextObject = valuesM[Random.Range(0,valuesM.Length)];
                 }
@@ -41,19 +50,20 @@ public class Spike : MonoBehaviour
                 switch(nextObject)
                 {
                     case 1:
-                    Instantiate(SpikeObject, whereToSpawn, Quaternion.identity);
-                    break;
+                        Instantiate(SpikeObject, whereToSpawn, Quaternion.identity);
+                        break;
 
                     case 2:
-                        Debug.Log("Object 2");
+                        Instantiate(object2, whereToSpawn, Quaternion.identity);
                         break;
 
                     case 3:
-                        Debug.Log("Object 3");
+                        Instantiate(object3, whereToSpawn, Quaternion.identity);
                         break;
 
                     case 4:
-                        Debug.Log("Object 4");
+                        Instantiate(ExtraHealtObject, whereToSpawn, Quaternion.identity);
+                        Debug.Log("Health Spawn");
                         break;
                 }
             

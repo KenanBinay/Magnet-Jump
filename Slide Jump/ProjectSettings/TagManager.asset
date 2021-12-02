@@ -15,6 +15,7 @@ TagManager:
   - Text3OH
   - Text4OH
   - Text5OH
+  - Health
   layers:
   - Default
   - TransparentFX
