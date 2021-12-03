@@ -19,7 +19,10 @@ public class Player : MonoBehaviour
    
     void LateUpdate()
     {
-  
+        if (Healt <= 0f)
+        {
+            hitImg.SetActive(true);
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -39,7 +42,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Damage! Health=" + Healt);
             hitImg.SetActive(true);
-            Healt -= 10f;
+            if (Healt!= 0) { Healt -= 10f; }          
             SpikeControl = true;
             StartCoroutine(HitTaken());
         }

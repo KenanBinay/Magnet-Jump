@@ -31,7 +31,7 @@ public class Spike : MonoBehaviour
 
                 if (ScoreController.Score <= 100) { nextObject = values[Random.Range(0, values.Length)]; }
 
-                if (ScoreController.Score >= 100 && ScoreController.Score <= 400)
+                if (ScoreController.Score >= 100 && ScoreController.Score <= 200)
                 {
                     SpikeMovement.SpeedCharacter = 16;
                     if (ScoreController.Score >= 144)
@@ -46,8 +46,28 @@ public class Spike : MonoBehaviour
                     int[] valuesM = { 1, 2, 3, 4 };
                     nextObject = valuesM[Random.Range(0,valuesM.Length)];
                 }
-
-                switch(nextObject)
+                if (ScoreController.Score >= 202 && ScoreController.Score<=402)
+                {
+                    SpikeMovement.SpeedCharacter = 20;
+                    spawnRate = 1.3f;
+                    int[] valuesM = { 1, 2, 3, 4 };
+                    nextObject = valuesM[Random.Range(0, valuesM.Length)];
+                }
+                if (ScoreController.Score >= 402 && ScoreController.Score <= 702)
+                {
+                    SpikeMovement.SpeedCharacter = 25;
+                    spawnRate = 1f;
+                    int[] valuesM = { 1, 2, 3, 4 };
+                    nextObject = valuesM[Random.Range(0, valuesM.Length)];
+                }
+                if (ScoreController.Score >= 702)
+                {
+                    SpikeMovement.SpeedCharacter = 35;
+                    spawnRate = 0.3f;
+                    int[] valuesM = { 1, 2, 3, 4 };
+                    nextObject = valuesM[Random.Range(0, valuesM.Length)];
+                }
+                switch (nextObject)
                 {
                     case 1:
                         Instantiate(SpikeObject, whereToSpawn, Quaternion.identity);
