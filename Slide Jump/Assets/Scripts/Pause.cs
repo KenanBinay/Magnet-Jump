@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
-    public Animator OnPauseAnim;
-    public GameObject PauseScreen;
+    public RectTransform PauseScreenA;
     public static bool controlPaused;
     void Start()
     {
-        OnPauseAnim.enabled = false;
+
     }
 
     void FixedUpdate()
     {
-
+      
     }
 
     public void PauseGame()
     {
         ControllerMove.rotating = true;
         controlPaused = true;
-        PauseScreen.SetActive(true);
-        OnPauseAnim.enabled = true;
         gameObject.SetActive(false);
     }
 

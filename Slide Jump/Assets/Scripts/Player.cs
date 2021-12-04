@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
    
     void LateUpdate()
     {
+      
         if (Healt <= 0f)
         {
             hitImg.SetActive(true);

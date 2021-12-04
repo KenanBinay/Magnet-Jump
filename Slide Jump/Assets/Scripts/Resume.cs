@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Resume : MonoBehaviour
 {
-    public GameObject PauseButton, PauseScreen;
+    public GameObject PauseButton;
     void Start()
     {
         
     }
 
    
-    void Update()
+    void FixedUpdate()
     {
         
     }
@@ -21,6 +21,5 @@ public class Resume : MonoBehaviour
         ControllerMove.rotating = false;
         Pause.controlPaused = false;
         PauseButton.SetActive(true);
-        PauseScreen.SetActive(false);
     }
 }
