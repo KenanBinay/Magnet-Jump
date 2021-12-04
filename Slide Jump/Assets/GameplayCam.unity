@@ -540,7 +540,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393786319}
   m_LocalRotation: {x: -0, y: -0, z: 4.0745354e-10, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2059}
+  m_LocalPosition: {x: 0, y: 0, z: -2377}
   m_LocalScale: {x: 3.8024132, y: 5.985916, z: 1.0000943}
   m_Children:
   - {fileID: 1092545326}
@@ -549,7 +549,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -597}
+  m_AnchoredPosition: {x: 0, y: -579}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &393786321
@@ -565,7 +565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.2901961}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.85882354}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -590,25 +590,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393786319}
   m_CullTransparentMesh: 1
---- !u!95 &393786323
-Animator:
-  serializedVersion: 3
+--- !u!114 &393786323
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393786319}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: da158b83d4338974f8922b4354f56475, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b46a0d1e0f8fd84c84ba5ea295d447e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseScreenA: {fileID: 393786320}
 --- !u!1001 &493776181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5081,8 +5075,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76522f97308289145a2c7243239e2a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnPauseAnim: {fileID: 393786323}
-  PauseScreen: {fileID: 393786319}
 --- !u!850595691 &1087246379
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -5172,15 +5164,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092545325}
   m_LocalRotation: {x: -0.0438561, y: -0.009470617, z: 0.004459251, w: 0.9989831}
-  m_LocalPosition: {x: 0, y: 0, z: -58.8}
-  m_LocalScale: {x: 0.24693629, y: 0.20204161, z: 0.98950416}
+  m_LocalPosition: {x: 0, y: 0, z: -66.2}
+  m_LocalScale: {x: 0.08258537, y: 0.0675708, z: 0.33092976}
   m_Children: []
   m_Father: {fileID: 393786320}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -5.022, y: -1.111, z: 0.56}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.1, y: -10.9}
+  m_AnchoredPosition: {x: 0.1, y: 3.83}
   m_SizeDelta: {x: 81.78, y: 57.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1092545327
@@ -5196,7 +5188,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseButton: {fileID: 1056353320}
-  PauseScreen: {fileID: 393786319}
 --- !u!114 &1092545328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6719,7 +6710,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18092
+  m_Name: pb_Mesh31588
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6986,7 +6977,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18134
+  m_Name: pb_Mesh31630
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8478,7 +8469,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18014
+  m_Name: pb_Mesh31462
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

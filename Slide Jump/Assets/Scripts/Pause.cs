@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
-    public RectTransform PauseScreenA;
     public static bool controlPaused;
     void Start()
     {
