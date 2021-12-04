@@ -18,6 +18,8 @@ public class Resume : MonoBehaviour
 
     public void ResumeButton()
     {
+        ControllerMove.rotating = false;
+        Pause.controlPaused = false;
         PauseButton.SetActive(true);
         PauseScreen.SetActive(false);
     }

@@ -22,11 +22,14 @@ public class ScoreController : MonoBehaviour
         }
         else if (Player.Healt >= 1f)
         {
-            if (Time.time > scoreSpeed)
+            if(Pause.controlPaused!=true)
             {
-                scoreSpeed = Time.time + ScoreRate;
-                GameScoreMain.text = Score.ToString();
-                Score+=scorePlus;
+                if (Time.time > scoreSpeed)
+                {
+                    scoreSpeed = Time.time + ScoreRate;
+                    GameScoreMain.text = Score.ToString();
+                    Score += scorePlus;
+                }
             }
         }
     }

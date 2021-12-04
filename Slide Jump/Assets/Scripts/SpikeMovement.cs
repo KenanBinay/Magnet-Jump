@@ -24,6 +24,7 @@ public class SpikeMovement : MonoBehaviour
         }
         else
         {
+            if(Pause.controlPaused!=true)
             transform.position -= transform.forward * Time.deltaTime * SpeedCharacter;
         }
     }
