@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public static float Healt = 100f;
     public GameObject hitImg;
     public static bool SpikeControl;
-
+    public Animator healthLogo;
     void Start()
     {
         SpikeControl = false;
@@ -19,10 +19,22 @@ public class Player : MonoBehaviour
    
     void LateUpdate()
     {
-      
+
         if (Healt <= 0f)
         {
-            hitImg.SetActive(true);
+            if (Pause.controlPaused)
+            {
+                healthLogo.enabled = false;
+                hitImg.SetActive(true);
+                ControllerMove.rotating = true;
+            }
+        }
+        else
+        {
+            if (Pause.controlPaused == false)
+            {
+                healthLogo.enabled = true;
+            }
         }
     }
     private void OnCollisionEnter(Collision collision)

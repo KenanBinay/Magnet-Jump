@@ -6,8 +6,8 @@ public class PauseScreen : MonoBehaviour
 {
     public RectTransform PauseScreenA;
     private Vector3 buttonVelocity = Vector3.zero;
-    Vector3 newPosDown = new Vector3(0, -597f, -2377f);
 
+    Vector3 newPosDown = new Vector3(0, -597f, -2377f);
     Vector3 newPosUp = new Vector3(0, -53f, -2377f);
 
     void Start()

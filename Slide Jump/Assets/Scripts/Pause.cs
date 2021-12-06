@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pause : MonoBehaviour
 {
     public static bool controlPaused;
+
     void Start()
     {
 

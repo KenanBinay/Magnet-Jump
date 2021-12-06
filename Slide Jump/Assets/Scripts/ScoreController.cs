@@ -11,18 +11,22 @@ public class ScoreController : MonoBehaviour
     public static float scoreSpeed = 0.0f;
     void Start()
     {
-
+        Debug.Log("HigScore = " + PlayerPrefs.GetFloat("HighScore"));
     }
 
     void FixedUpdate()
     {
         if (Player.Healt <= 0f)
-        {
-           
+        {          
+            if (Score > PlayerPrefs.GetFloat("HighScore", 0))
+            {
+                PlayerPrefs.SetFloat("HighScore", Score);
+                Debug.Log("HigScore Saved = " + PlayerPrefs.GetFloat("HighScore"));
+            }
         }
         else if (Player.Healt >= 1f)
         {
-            if(Pause.controlPaused!=true)
+            if (Pause.controlPaused != true)
             {
                 if (Time.time > scoreSpeed)
                 {
