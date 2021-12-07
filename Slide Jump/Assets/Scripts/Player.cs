@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     public static float wallControlL, wallControlR;
     public static float Healt = 100f;
     public GameObject hitImg;
-    public static bool SpikeControl;
+    public static bool SpikeControl,healthControl;
     public Animator healthLogo;
     void Start()
     {
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         {
             if (Pause.controlPaused == false)
             {
-                healthLogo.enabled = true;
+            //    healthLogo.enabled = true;
             }
         }
     }
@@ -62,8 +62,12 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Health"))
         {
             Debug.Log("ExtraHeal! Health=" + Healt);
-            if(Healt!=100)
-            Healt += 10f;
+            if (Healt != 100)
+            {
+                Healt += 10f;
+                healthControl = true;
+                StartCoroutine(HealthTaken());
+            }
         }
     }
 
@@ -72,5 +76,10 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         hitImg.SetActive(false);
         SpikeControl = false;
+    }
+    private IEnumerator HealthTaken()
+    {
+        yield return new WaitForSeconds(0.2f);
+        healthControl = false;
     }
 }
