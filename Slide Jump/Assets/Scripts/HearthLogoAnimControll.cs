@@ -13,6 +13,34 @@ public class HearthLogoAnimControll : MonoBehaviour
     
     void FixedUpdate()
     {
+        if (Pause.controlPaused == false)
+        {
+            if (GameOverScreen.GameEnd == false)
+            {
+                if (Player.SpikeControl == false)
+                {
+
+                    if (decrease == false)
+                    {
+                        FinalHeigh = 0.22f;
+                        Speed = 1f;
+                        float newScale = Mathf.Lerp(SeedHeight, FinalHeigh, Time.time * Speed);
+                        transform.localScale = new Vector3(newScale, newScale, newScale);
+                        StartCoroutine(HearthIncrease());
+                    }
+                    if (decrease)
+                    {
+                        FinalHeigh = 0.20f;
+                        Speed = 1f;
+                        float newScale = Mathf.Lerp(SeedHeight, FinalHeigh, Time.time * Speed);
+                        transform.localScale = new Vector3(newScale, newScale, newScale);
+                        if (transform.localScale == new Vector3(0.20f, 0.20f, 0.20f))
+                        { decrease = false; }
+                    }
+                }
+            }
+        }
+
         if (Player.SpikeControl)
         {
             FinalHeigh = 0.15f;
@@ -28,29 +56,8 @@ public class HearthLogoAnimControll : MonoBehaviour
             float newScale = Mathf.Lerp(SeedHeight, FinalHeigh, Time.time * Speed);
             transform.localScale = new Vector3(newScale, newScale, newScale);
 
-
         }
-        else if (Player.SpikeControl == false)
-        {
-           
-            if (decrease == false)
-            {
-                FinalHeigh = 0.22f;
-                Speed = 1f;
-                float newScale = Mathf.Lerp(SeedHeight, FinalHeigh, Time.time * Speed);
-                transform.localScale = new Vector3(newScale, newScale, newScale);
-                StartCoroutine(HearthIncrease());
-            }
-            if (decrease)
-            {
-                FinalHeigh = 0.20f;
-                Speed = 1f;
-                float newScale = Mathf.Lerp(SeedHeight, FinalHeigh, Time.time * Speed);
-                transform.localScale = new Vector3(newScale, newScale, newScale);
-                if (transform.localScale == new Vector3(0.20f, 0.20f, 0.20f))
-                { decrease = false; }
-            }
-        }                
+
     }
     private IEnumerator HearthIncrease()
     {

@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public static float Healt = 100f;
     public GameObject hitImg;
     public static bool SpikeControl,healthControl;
-    public Animator healthLogo;
+
     void Start()
     {
         SpikeControl = false;
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         {
             if (Pause.controlPaused)
             {
-                healthLogo.enabled = false;
+
                 hitImg.SetActive(true);
                 ControllerMove.rotating = true;
             }
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         {
             if (Pause.controlPaused == false)
             {
-            //    healthLogo.enabled = true;
+
             }
         }
     }

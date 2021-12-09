@@ -20,7 +20,7 @@ public class ControllerMove : MonoBehaviour
         
     }
 
-    float once = 0f;
+   public static float once = 0f;
     void FixedUpdate()
     {       
         playerY = player.transform.rotation.y;

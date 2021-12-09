@@ -24,8 +24,13 @@ public class SpikeMovement : MonoBehaviour
         }
         else
         {
-            if(Pause.controlPaused!=true)
-            transform.position -= transform.forward * Time.deltaTime * SpeedCharacter;
+            if (Pause.controlPaused != true)
+            {
+                transform.position -= transform.forward * Time.deltaTime * SpeedCharacter;
+
+            }
+      
+            spike.useGravity = false;
         }
     }
     private void OnCollisionEnter(Collision collision)
