@@ -24,8 +24,10 @@ public class PlayAgainButton : MonoBehaviour
         Pause.controlPaused = false;
         GameOverScreen.GameEnd = false;
         ScoreController.Score = 0f;
-        SpikeMovement.SpeedCharacter = 8f; 
-      
+        SpikeMovement.SpeedCharacter = 8f;
+        Spike.spawnRate = 4f;
+        SpikeMovement.SpeedCharacter = 8f;
+
         player.position = new Vector3(0.32f, -2.1f, 3.952506f);
         Player.wallControlL = 0f;
         Player.wallControlR = 0f;

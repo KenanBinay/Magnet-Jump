@@ -7,14 +7,14 @@ public class Spike : MonoBehaviour
     public GameObject SpikeObject, object2, object3, ExtraHealtObject, ExtraScore;
     float Randx;
     Vector3 whereToSpawn;
-    public float spawnRate;
-    private int[] values = { 1, 2, 3 };
+    public static float spawnRate;
+    public static int[] values = { 1, 2, 3 };
     int nextObject;
     public static float nextSpawn = 0.0f;
     public static float spawnCntrl = 1f;
     void Start()
     {
-
+        spawnRate = 4f;
     }
 
     void FixedUpdate()
