@@ -17,7 +17,7 @@ public class PlayAgainButton : MonoBehaviour
 
     public void PlayAgainGame()
     {
-        Player.Healt = 100f;
+        Player.Healt = 50f;
         Spike.spawnCntrl = 1f;
         ControllerMove.rotating = false;
         Player.SpikeControl = false;
@@ -28,10 +28,10 @@ public class PlayAgainButton : MonoBehaviour
         Spike.spawnRate = 4f;
         SpikeMovement.SpeedCharacter = 8f;
 
-        player.position = new Vector3(0.32f, -2.1f, 3.952506f);
         Player.wallControlL = 0f;
         Player.wallControlR = 0f;
         ControllerMove.once = 0f;
+        player.position = new Vector3(0.32f, -2.1f, 3.952506f);
         
     }
 }

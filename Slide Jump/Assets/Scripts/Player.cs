@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static float wallControlL, wallControlR;
-    public static float Healt = 100f;
+    public static float Healt = 50f;
     public GameObject hitImg;
     public static bool SpikeControl,healthControl;
 

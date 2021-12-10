@@ -7226,7 +7226,6 @@ MonoBehaviour:
   object3: {fileID: 5704892366475833889, guid: 21f1df4976baf9440bb191939ef36305, type: 3}
   ExtraHealtObject: {fileID: 2013623092251881752, guid: 102f24d0d0287e24da56ea856596dc26, type: 3}
   ExtraScore: {fileID: 0}
-  spawnRate: 4
 --- !u!4 &1301033773
 Transform:
   m_ObjectHideFlags: 0
@@ -9032,7 +9031,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
