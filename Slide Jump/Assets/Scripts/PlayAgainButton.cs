@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayAgainButton : MonoBehaviour
 {
     public Transform player;
+    public GameObject Confetti;
     void Start()
     {
         
@@ -27,6 +28,8 @@ public class PlayAgainButton : MonoBehaviour
         SpikeMovement.SpeedCharacter = 8f;
         Spike.spawnRate = 4f;
         SpikeMovement.SpeedCharacter = 8f;
+        ScoreController.HighScoreAlertTxt = false;
+        Confetti.SetActive(false);
 
         Player.wallControlL = 0f;
         Player.wallControlR = 0f;

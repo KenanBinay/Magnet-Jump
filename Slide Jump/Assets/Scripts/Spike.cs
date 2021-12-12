@@ -64,8 +64,8 @@ public class Spike : MonoBehaviour
                     }
                     if (ScoreController.Score >= 702)
                     {
-                        SpikeMovement.SpeedCharacter = 35;
-                        spawnRate = 0.3f;
+                        SpikeMovement.SpeedCharacter = 30;
+                        spawnRate = 0.5f;
                         int[] valuesM = { 1, 2, 3, 4 };
                         nextObject = valuesM[Random.Range(0, valuesM.Length)];
                     }
@@ -84,8 +84,11 @@ public class Spike : MonoBehaviour
                             break;
 
                         case 4:
-                            Instantiate(ExtraHealtObject, whereToSpawn, Quaternion.identity);
-                            Debug.Log("Health Spawn");
+                            if (Player.Healt <= 50f)
+                            {
+                                Instantiate(ExtraHealtObject, whereToSpawn, Quaternion.identity);
+                                Debug.Log("Health Spawn");
+                            }
                             break;
                     }
 
