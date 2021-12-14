@@ -6,6 +6,7 @@ public class PlayAgainButton : MonoBehaviour
 {
     public Transform player;
     public GameObject Confetti;
+    public RectTransform HighScoreTxt;
     void Start()
     {
         
@@ -20,7 +21,6 @@ public class PlayAgainButton : MonoBehaviour
     {
         Player.Healt = 50f;
         Spike.spawnCntrl = 1f;
-        ControllerMove.rotating = false;
         Player.SpikeControl = false;
         Pause.controlPaused = false;
         GameOverScreen.GameEnd = false;
@@ -30,11 +30,14 @@ public class PlayAgainButton : MonoBehaviour
         SpikeMovement.SpeedCharacter = 8f;
         ScoreController.HighScoreAlertTxt = false;
         Confetti.SetActive(false);
+        ScoreController.GameOverScore = 0f;
 
         Player.wallControlL = 0f;
         Player.wallControlR = 0f;
         ControllerMove.once = 0f;
         player.position = new Vector3(0.32f, -2.1f, 3.952506f);
-        
+        HighScoreTxt.localScale = new Vector3(0.04f, 0.04f, 0.04f);
+
+        ControllerMove.rotating = false;
     }
 }

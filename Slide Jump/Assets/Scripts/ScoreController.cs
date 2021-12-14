@@ -15,6 +15,7 @@ public class ScoreController : MonoBehaviour
     public static bool HighScoreAlertTxt;
     void Start()
     {
+        PlayerPrefs.SetFloat("HighScore", 10f);
         HighScoreTxt.localScale = new Vector3(0.031f, 0.031f, 0.031f);
         NewHighScoreTxt.SetActive(false);
         HighScoreConfetti.SetActive(false);

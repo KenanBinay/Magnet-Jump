@@ -7254,7 +7254,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18216
+  m_Name: pb_Mesh18220
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7615,7 +7615,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18276
+  m_Name: pb_Mesh18280
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8889,6 +8889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1142025386}
   Confetti: {fileID: 2625068027835928255}
+  HighScoreTxt: {fileID: 54339461}
 --- !u!114 &1862022772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9159,7 +9160,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18082
+  m_Name: pb_Mesh18086
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9811,6 +9812,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7115460577386427450, guid: 260077c501e932549bf14c15e45fd9c5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 7115460577386427451, guid: 260077c501e932549bf14c15e45fd9c5, type: 3}
+      propertyPath: ShapeModule.m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 76146798aeecef6469f8a77f5e686c7d, type: 3}
     - target: {fileID: 7115460577386427453, guid: 260077c501e932549bf14c15e45fd9c5, type: 3}
       propertyPath: m_Name
       value: Confetti
