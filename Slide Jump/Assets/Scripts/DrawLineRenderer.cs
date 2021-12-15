@@ -13,13 +13,12 @@ public class DrawLineRenderer : MonoBehaviour
 
     void Start()
     {
-
+        
     }
 
-
+    
     void FixedUpdate()
     {
-      //  Point2.transform.position = new Vector3((Point1.transform.position.x + Point3.transform.position.x) / 2, Point2Ypositio, (Point1.transform.position.z + Point3.transform.position.z) / 2);
         var pointList = new List<Vector3>();
 
         for (float ratio = 0; ratio <= 1; ratio += 1 / vertexCount)
