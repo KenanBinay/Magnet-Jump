@@ -15,7 +15,7 @@ public class ScoreController : MonoBehaviour
     public static bool HighScoreAlertTxt;
     void Start()
     {
-        PlayerPrefs.SetFloat("HighScore", 10f);
+      //  PlayerPrefs.SetFloat("HighScore", 10f);
         HighScoreTxt.localScale = new Vector3(0.031f, 0.031f, 0.031f);
         NewHighScoreTxt.SetActive(false);
         HighScoreConfetti.SetActive(false);
@@ -26,46 +26,51 @@ public class ScoreController : MonoBehaviour
     bool Waited;
     void FixedUpdate()
     {
-        if (Player.Healt <= 0f)
+        if (MenuPlayGame.MenuStart == false)
         {
-
-            StartCoroutine(WaitJust());
-
-            if (Waited == true)
+            if (Player.Healt <= 0f)
             {
-                if (Time.time > scoreSpeedGameOver)
+                StartCoroutine(WaitJust());
+
+                if (Waited == true)
                 {
-                    scoreSpeedGameOver = Time.time + ScoreRate2;
-                    if (ScoreGameEnd.text != Score.ToString())
+                    if (Time.time > scoreSpeedGameOver)
                     {
-                        ScoreGameEnd.text = GameOverScore.ToString();
-                        GameOverScore++;
+                        scoreSpeedGameOver = Time.time + ScoreRate2;
+                        if (ScoreGameEnd.text != Score.ToString())
+                        {
+                            ScoreGameEnd.text = GameOverScore.ToString();
+                            GameOverScore++;
+                        }
+
                     }
 
-                }
+                    if (GameOverScore > PlayerPrefs.GetFloat("HighScore", 0))
+                    {
+                        HighScoreConfetti.SetActive(true);
+                        NewHighScoreTxt.SetActive(true);
+                        HighScoreAlertTxt = true;
 
-                if (GameOverScore > PlayerPrefs.GetFloat("HighScore", 0))
-                {
-                    HighScoreConfetti.SetActive(true);
-                    NewHighScoreTxt.SetActive(true);
-                    HighScoreAlertTxt = true;
-
-                    PlayerPrefs.SetFloat("HighScore", Score);
-                    Highscore.text = PlayerPrefs.GetFloat("HighScore").ToString();
-                    Debug.Log("HigScore Saved = " + PlayerPrefs.GetFloat("HighScore"));
-                    StartCoroutine(HighScoreScale());
+                        PlayerPrefs.SetFloat("HighScore", Score);
+                        Highscore.text = PlayerPrefs.GetFloat("HighScore").ToString();
+                        Debug.Log("HigScore Saved = " + PlayerPrefs.GetFloat("HighScore"));
+                        StartCoroutine(HighScoreScale());
+                    }
                 }
             }
         }
-        else if (Player.Healt >= 1f)
+        if (MenuPlayGame.MenuStart == false)
         {
-            if (Pause.controlPaused != true)
+            if (Player.Healt >= 1f)
             {
-                if (Time.time > scoreSpeed)
+                if (Pause.controlPaused != true)
                 {
-                    scoreSpeed = Time.time + ScoreRate;
-                    GameScoreMain.text = Score.ToString();
-                    Score += scorePlus;
+                    if (Time.time > scoreSpeed)
+                    {
+                        scoreSpeed = Time.time + ScoreRate;
+                        GameScoreMain.text = Score.ToString();
+                        Score += scorePlus;
+                    }
                 }
             }
         }

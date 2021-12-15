@@ -19,19 +19,23 @@ public class GameOverScreen : MonoBehaviour
    
     void FixedUpdate()
     {
-        if (Player.Healt <= 0f)
+        if (MenuPlayGame.MenuStart == false)
         {
-            ControllerMove.rotating = true;
-            GameEnd = true;
-            GameEndScreen.localPosition = Vector3.SmoothDamp(GameEndScreen.localPosition, newPosUp, ref endVelocity, 0.2f);
-            PauseButton.SetActive(false);
+            if (Player.Healt <= 0f)
+            {
+                ControllerMove.rotating = true;
+                GameEnd = true;
+                GameEndScreen.localPosition = Vector3.SmoothDamp(GameEndScreen.localPosition, newPosUp, ref endVelocity, 0.2f);
+                PauseButton.SetActive(false);
+            }
+            else
+            {
+                ControllerMove.rotating = false;
+                GameEnd = false;
+                GameEndScreen.localPosition = Vector3.SmoothDamp(GameEndScreen.localPosition, newPosDown, ref endVelocity, 0.2f);
+                PauseButton.SetActive(true);
+            }
         }
-        else
-        {
-            ControllerMove.rotating = false;
-            GameEnd = false;
-            GameEndScreen.localPosition = Vector3.SmoothDamp(GameEndScreen.localPosition, newPosDown, ref endVelocity, 0.2f);
-            PauseButton.SetActive(true);
-        }
+       
     }
 }

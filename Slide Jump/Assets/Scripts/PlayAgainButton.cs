@@ -36,7 +36,7 @@ public class PlayAgainButton : MonoBehaviour
         Player.wallControlR = 0f;
         ControllerMove.once = 0f;
         player.position = new Vector3(0.32f, -2.1f, 3.952506f);
-        HighScoreTxt.localScale = new Vector3(0.04f, 0.04f, 0.04f);
+        HighScoreTxt.localScale = new Vector3(0.031f, 0.031f, 0.031f);
 
         ControllerMove.rotating = false;
     }

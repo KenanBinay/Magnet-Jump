@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class MagnetMenuController : MonoBehaviour
 {
-    
+    public float degreesPerSecond;
     void Start()
     {
         
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
-        
+        transform.Rotate(new Vector3(1f, 1f, 1f) * degreesPerSecond * Time.deltaTime);
     }
 }
