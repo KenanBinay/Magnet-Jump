@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ScoreController : MonoBehaviour
 {
-    [SerializeField] TMPro.TextMeshProUGUI GameScoreMain, ScoreGameEnd, Highscore;
+    [SerializeField] TMPro.TextMeshProUGUI GameScoreMain, ScoreGameEnd, Highscore, MenuScore;
     public float ScoreRate, ScoreRate2;
     public static float Score, scorePlus = 2;
     public static float scoreSpeed = 0.0f, scoreSpeedGameOver, GameOverScore;
@@ -22,6 +22,7 @@ public class ScoreController : MonoBehaviour
         Score = 0f;
         Debug.Log("HigScore = " + PlayerPrefs.GetFloat("HighScore"));
         Highscore.text = PlayerPrefs.GetFloat("HighScore").ToString();
+        MenuScore.text = PlayerPrefs.GetFloat("HighScore").ToString();
     }
     bool Waited;
     void FixedUpdate()
@@ -30,6 +31,7 @@ public class ScoreController : MonoBehaviour
         {
             if (Player.Healt <= 0f)
             {
+
                 StartCoroutine(WaitJust());
 
                 if (Waited == true)
