@@ -8,14 +8,17 @@ public class ScoreController : MonoBehaviour
     [SerializeField] TMPro.TextMeshProUGUI GameScoreMain, ScoreGameEnd, Highscore, MenuScore;
     public float ScoreRate, ScoreRate2;
     public static float Score, scorePlus = 2;
-    public static float scoreSpeed = 0.0f, scoreSpeedGameOver, GameOverScore;
+    public static float scoreSpeed = 0.0f, scoreSpeedGameOver, GameOverScore, SfxScore;
     public GameObject HighScoreConfetti,NewHighScoreTxt;
     public RectTransform GameEndScreen,HighScoreTxt;
     public float SeedHeight, FinalHeigh, Speed;
     public static bool HighScoreAlertTxt;
+
+    float controlSfx;
+    [SerializeField] private AudioSource HighScoreSfx, ConfettiSfx, ScoreSfx;
     void Start()
     {
-      //  PlayerPrefs.SetFloat("HighScore", 10f);
+        PlayerPrefs.SetFloat("HighScore", 10f);
         HighScoreTxt.localScale = new Vector3(0.031f, 0.031f, 0.031f);
         NewHighScoreTxt.SetActive(false);
         HighScoreConfetti.SetActive(false);
@@ -48,21 +51,49 @@ public class ScoreController : MonoBehaviour
                         {
                             ScoreGameEnd.text = GameOverScore.ToString();
                             GameOverScore++;
+                            ScoreSfx.Play();
+                            ScoreSfx.loop = true;
                         }
-
+                        else if (ScoreGameEnd.text == Score.ToString())
+                        {
+                            ScoreSfx.Stop();
+                            ScoreSfx.loop = false;
+                        }
                     }
 
                     if (GameOverScore > PlayerPrefs.GetFloat("HighScore", 0))
                     {
+                        if (SfxScore != PlayerPrefs.GetFloat("HighScore", 0))
+                        {
+                            ConfettiSfx.Play();
+                            HighScoreSfx.Play();
+
+                            if (PlayAgainButton.SfxCont)
+                            {
+                                ConfettiSfx.Stop();
+                                HighScoreSfx.Stop();                         
+                            }
+
+                            if (MenuPlayGame.MenuStart)
+                            {
+                                ConfettiSfx.Stop();
+                                HighScoreSfx.Stop();
+                            }
+                        }
+
                         HighScoreConfetti.SetActive(true);
                         NewHighScoreTxt.SetActive(true);
                         HighScoreAlertTxt = true;
 
                         PlayerPrefs.SetFloat("HighScore", Score);
                         Highscore.text = PlayerPrefs.GetFloat("HighScore").ToString();
+                        SfxScore = PlayerPrefs.GetFloat("HighScore", 0);
                         Debug.Log("HigScore Saved = " + PlayerPrefs.GetFloat("HighScore"));
+                        
                         StartCoroutine(HighScoreScale());
+                      //  StartCoroutine(WaitSfx());
                     }
+                  
                 }
             }
         }
@@ -86,11 +117,21 @@ public class ScoreController : MonoBehaviour
     public IEnumerator HighScoreScale()
     {
         yield return new WaitForSeconds(1.3f);
-        HighScoreTxt.localScale = new Vector3(0.04f, 0.04f, 0.04f);
+        HighScoreTxt.localScale = new Vector3(0.04f, 0.04f, 0.04f);       
     }
     public IEnumerator WaitJust()
     {
         yield return new WaitForSeconds(0.7f);
         Waited = true;
     }
+  /*  public IEnumerator WaitSfx()
+    {
+        yield return new WaitForSeconds(7.5f);
+        if (SfxScore == PlayerPrefs.GetFloat("HighScore", 0))
+        {
+            HighScoreSfx.Stop();
+            ConfettiSfx.Stop();
+        }
+    }
+  */
 }

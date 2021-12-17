@@ -15,6 +15,7 @@ public class ControllerMove : MonoBehaviour
     public float horizontalSpeed=1f;
 
     public static bool rotating = false;
+    [SerializeField] private AudioSource SlideL, SlideR;
     void Start()
     {
         

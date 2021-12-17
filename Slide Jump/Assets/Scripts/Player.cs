@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public static float Healt = 50f;
     public GameObject hitImg;
     public static bool SpikeControl,healthControl;
-
+    [SerializeField] private AudioSource SpikeSfx, WallTouch;
     void Start()
     {
         SpikeControl = false;
@@ -43,18 +43,30 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("WallL"))
         {
+            if (SFXonOff.controlSfx == false)
+            {
+                WallTouch.Play();
+            }
             wallControlL = 1f;
             wallControlR = 0f;
             Debug.Log("WallL = " + wallControlL + " || WallR = " + wallControlR);
         }
         if (collision.gameObject.CompareTag("WallR"))
         {
+            if (SFXonOff.controlSfx == false)
+            {
+                WallTouch.Play();
+            }
             wallControlR = 1f;
             wallControlL = 0f;
             Debug.Log("WallL = " + wallControlL + " || WallR = " + wallControlR);
         }
         if (collision.gameObject.CompareTag("Spike"))
         {
+            if (SFXonOff.controlSfx == false)
+            {
+                SpikeSfx.Play();
+            }
             Debug.Log("Damage! Health=" + Healt);
             hitImg.SetActive(true);
             if (Healt!= 0) { Healt -= 10f; }          

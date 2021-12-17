@@ -5,6 +5,7 @@ using UnityEngine;
 public class HomeGameOver : MonoBehaviour
 {
     public GameObject HighScoreConfetti, magnet;
+    [SerializeField] private AudioSource ClickSfx;
     void Start()
     {
         
@@ -18,6 +19,11 @@ public class HomeGameOver : MonoBehaviour
 
     public void HomeReturn()
     {
+        if (SFXonOff.controlSfx == false)
+        {
+            ClickSfx.Play();
+        }
+
         Spike.spawnCntrl = 0f;
         ScoreController.Score = 0f;
         Spike.spawnRate = 4f;

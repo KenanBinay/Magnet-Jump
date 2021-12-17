@@ -7,7 +7,7 @@ public class MenuPlayGame : MonoBehaviour
     public Transform player;
     public GameObject PauseButton, MagnetStart;
     public RectTransform HighScoreTxt, GameEndScreen;
-
+    [SerializeField] private AudioSource ClickSfx;
 
    public static bool MenuStart;
     void Start()
@@ -32,7 +32,12 @@ public class MenuPlayGame : MonoBehaviour
 
     public void PlayGame()
     {
-        Debug.Log("StartingGame...");
+        Debug.Log("GameStart");
+
+        if (SFXonOff.controlSfx == false)
+        {
+            ClickSfx.Play();
+        }
 
         MagnetStart.SetActive(false);
         PauseButton.SetActive(true);
@@ -45,6 +50,7 @@ public class MenuPlayGame : MonoBehaviour
         Pause.controlPaused = false;
         GameOverScreen.GameEnd = false;
         Pause.controlPaused = false;
+        ScoreController.SfxScore = 0f;
         ScoreController.GameOverScore = 0f;
         SpikeMovement.SpeedCharacter = 8f;
         SpikeMovement.SpeedCharacter = 8f;

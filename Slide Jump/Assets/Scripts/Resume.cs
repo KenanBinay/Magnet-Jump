@@ -5,7 +5,7 @@ using UnityEngine;
 public class Resume : MonoBehaviour
 {
     public GameObject PauseButton;
-
+    [SerializeField] private AudioSource ClickSfx;
     void Start()
     {
         
@@ -19,8 +19,12 @@ public class Resume : MonoBehaviour
 
     public void ResumeButton()
     {
+        if (SFXonOff.controlSfx == false)
+        {
+            ClickSfx.Play();
+        }
         ControllerMove.rotating = false;
         Pause.controlPaused = false;
-        PauseButton.SetActive(true);
+    
     }
 }

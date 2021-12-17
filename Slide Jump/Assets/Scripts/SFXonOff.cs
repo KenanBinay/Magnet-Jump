@@ -5,11 +5,12 @@ using UnityEngine;
 public class SFXonOff : MonoBehaviour
 {
     public GameObject muteStick;
-    public static bool controlSfx; 
+    public static bool controlSfx;
+    [SerializeField] private AudioSource ClickSfx;
     void Start()
     {
-       muteStick.SetActive(false);
-        controlSfx = true;
+        muteStick.SetActive(false);
+    
     }
 
     
@@ -20,19 +21,19 @@ public class SFXonOff : MonoBehaviour
 
     public void SfxControll()
     {
-        if (controlSfx)
+        if (controlSfx == false)
         {
             Debug.Log("Mute On");
-
             muteStick.SetActive(true);
-            controlSfx = false;
+            controlSfx = true;
         }
-        else if(controlSfx == false)
+        else if(controlSfx)
         {
             Debug.Log("Mute Off");
 
+            ClickSfx.Play();
             muteStick.SetActive(false);
-            controlSfx = true;
+            controlSfx = false;
         }
         
     }
