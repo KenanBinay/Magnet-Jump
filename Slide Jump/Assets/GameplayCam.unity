@@ -12245,7 +12245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HighScoreConfetti: {fileID: 2625068027835928255}
-  magnet: {fileID: 0}
+  magnet: {fileID: 1101384419}
 --- !u!114 &922183360
 MonoBehaviour:
   m_ObjectHideFlags: 0
