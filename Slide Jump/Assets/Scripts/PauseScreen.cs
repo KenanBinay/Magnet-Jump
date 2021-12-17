@@ -17,16 +17,23 @@ public class PauseScreen : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Pause.controlPaused == false)
+        if (MenuPlayGame.MenuStart == false)
         {
-
-            PauseScreenA.localPosition = Vector3.SmoothDamp(PauseScreenA.localPosition, newPosDown, ref buttonVelocity, 0.1f);
+            if (Pause.controlPaused == false)
+            {
+                PauseScreenA.localPosition = Vector3.SmoothDamp(PauseScreenA.localPosition, newPosDown, ref buttonVelocity, 0.1f);
+            }
+            else if (Pause.controlPaused)
+            {
+                PauseScreenA.localPosition = Vector3.SmoothDamp(PauseScreenA.localPosition, newPosUp, ref buttonVelocity, 0.1f);
+            }
         }
-
-        if (Pause.controlPaused)
+        if (MenuPlayGame.MenuStart)
         {
-           
-            PauseScreenA.localPosition = Vector3.SmoothDamp(PauseScreenA.localPosition, newPosUp, ref buttonVelocity, 0.1f);
+            if (Pause.controlPaused == false)
+            {
+                PauseScreenA.localPosition = Vector3.SmoothDamp(PauseScreenA.localPosition, newPosDown, ref buttonVelocity, 0.1f);
+            }
         }
     }
 }

@@ -36,6 +36,10 @@ public class GameOverScreen : MonoBehaviour
                 PauseButton.SetActive(true);
             }
         }
+        if (MenuPlayGame.MenuStart == true)
+        {
+            GameEndScreen.localPosition = Vector3.SmoothDamp(GameEndScreen.localPosition, newPosDown, ref endVelocity, 0.2f);
+        }
        
     }
 }

@@ -44,10 +44,13 @@ public class MenuPlayGame : MonoBehaviour
         Player.SpikeControl = false;
         Pause.controlPaused = false;
         GameOverScreen.GameEnd = false;
+        Pause.controlPaused = false;
         ScoreController.GameOverScore = 0f;
         SpikeMovement.SpeedCharacter = 8f;
         SpikeMovement.SpeedCharacter = 8f;
-    
+
+        player.position = new Vector3(0.32f, -2.1f, 3.952506f);
+        HighScoreTxt.localScale = new Vector3(0.031f, 0.031f, 0.031f);
 
         Player.wallControlL = 0f;
         Player.wallControlR = 0f;

@@ -27,6 +27,11 @@ public class ScoreController : MonoBehaviour
     bool Waited;
     void FixedUpdate()
     {
+        if (MenuPlayGame.MenuStart == true)
+        {
+            MenuScore.text = PlayerPrefs.GetFloat("HighScore").ToString();
+        }
+
         if (MenuPlayGame.MenuStart == false)
         {
             if (Player.Healt <= 0f)

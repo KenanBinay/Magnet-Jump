@@ -14,23 +14,30 @@ public class SpikeMovement : MonoBehaviour
     }
 
     void FixedUpdate()
-    {    
-        if (Player.Healt <= 0f)
+    {
+        if (MenuPlayGame.MenuStart == false)
         {
-            spike.useGravity = true;
-            ControllerMove.rotating = true;
-            Spike.spawnCntrl = 0f;
-            StartCoroutine(HealtZero());
-        }
-        else
-        {
-            if (Pause.controlPaused != true)
+            if (Player.Healt <= 0f)
             {
-                transform.position -= transform.forward * Time.deltaTime * SpeedCharacter;
-
+                spike.useGravity = true;
+                ControllerMove.rotating = true;
+                Spike.spawnCntrl = 0f;
+                StartCoroutine(HealtZero());
             }
-      
-            spike.useGravity = false;
+            else
+            {
+                if (Pause.controlPaused != true)
+                {
+                    transform.position -= transform.forward * Time.deltaTime * SpeedCharacter;
+
+                }
+
+                spike.useGravity = false;
+            }
+        }
+        if (MenuPlayGame.MenuStart)
+        {
+            Destroy(gameObject);
         }
     }
     private void OnCollisionEnter(Collision collision)

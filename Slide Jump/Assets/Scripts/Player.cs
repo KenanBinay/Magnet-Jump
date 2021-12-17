@@ -19,21 +19,23 @@ public class Player : MonoBehaviour
    
     void LateUpdate()
     {
-
-        if (Healt <= 0f)
+        if (MenuPlayGame.MenuStart == false)
         {
-            if (Pause.controlPaused)
+            if (Healt <= 0f)
             {
+                if (Pause.controlPaused)
+                {
 
-                hitImg.SetActive(true);
-                ControllerMove.rotating = true;
+                    hitImg.SetActive(true);
+                    ControllerMove.rotating = true;
+                }
             }
-        }
-        else
-        {
-            if (Pause.controlPaused == false)
+            else
             {
+                if (Pause.controlPaused == false)
+                {
 
+                }
             }
         }
     }
