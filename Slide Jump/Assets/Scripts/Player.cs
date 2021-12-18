@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public static float Healt = 50f;
     public GameObject hitImg;
     public static bool SpikeControl,healthControl;
-    [SerializeField] private AudioSource SpikeSfx, WallTouch;
+    [SerializeField] private AudioSource SpikeSfx, WallTouch, HealthSfx;
     void Start()
     {
         SpikeControl = false;
@@ -78,6 +78,11 @@ public class Player : MonoBehaviour
             Debug.Log("ExtraHeal! Health=" + Healt);
             if (Healt != 100)
             {
+                if (SFXonOff.controlSfx == false)
+                {
+                    HealthSfx.Play();
+                }
+
                 Healt += 10f;
                 healthControl = true;
                 StartCoroutine(HealthTaken());

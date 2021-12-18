@@ -15,7 +15,7 @@ public class ControllerMove : MonoBehaviour
     public float horizontalSpeed=1f;
 
     public static bool rotating = false;
-    [SerializeField] private AudioSource SlideL, SlideR;
+    [SerializeField] private AudioSource Slide;
     void Start()
     {
         
@@ -75,6 +75,8 @@ public class ControllerMove : MonoBehaviour
 
                     if (controlL != 1f)
                     {
+                        if (SFXonOff.controlSfx == false) { Slide.Play(); }
+                      
                         Vector3 directionL = new Vector3(-180f, 0f, 0f);
 
                         StartCoroutine(RotateObject(Magnet, directionL, 0.3f));
@@ -91,6 +93,7 @@ public class ControllerMove : MonoBehaviour
 
                         if (controlL != 1f)
                         {
+                            if (SFXonOff.controlSfx == false) { Slide.Play(); }
                             Vector3 directionL = new Vector3(-180f, 0f, 0f);
 
                             StartCoroutine(RotateObject(Magnet, directionL, 0.3f));
@@ -150,6 +153,7 @@ public class ControllerMove : MonoBehaviour
 
                     if (controlR != 1)
                     {
+                        if (SFXonOff.controlSfx == false) { Slide.Play(); }
                         Vector3 directionR = new Vector3(180f, 0f, 0f);
 
                         StartCoroutine(RotateObject(Magnet, directionR, 0.3f));
@@ -166,7 +170,7 @@ public class ControllerMove : MonoBehaviour
 
                         if (controlR != 1)
                         {
-
+                            if (SFXonOff.controlSfx == false) { Slide.Play(); }
                             Vector3 directionR = new Vector3(180f, 0f, 0f);
 
                             StartCoroutine(RotateObject(Magnet, directionR, 0.3f));
