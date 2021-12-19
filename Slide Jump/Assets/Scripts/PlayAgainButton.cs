@@ -7,25 +7,58 @@ public class PlayAgainButton : MonoBehaviour
     public Transform player;
     public GameObject Confetti;
     public RectTransform HighScoreTxt;
-    [SerializeField] private AudioSource ClickSfx;
-    public static bool SfxCont;
+    [SerializeField] private AudioSource ClickSfx, ConfettiSfx, NewHighScoreSfx;
+    public static bool SfxCont, isHighScore, highScorePlaying;
+   
     void Start()
     {
-        
+        AudioSource ConfettiSfx = GetComponent<AudioSource>();
+        AudioSource NewHighScoreSfx = GetComponent<AudioSource>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (Player.Healt <= 0f)
+        {
+            SfxCont = false;
+
+            if (ScoreController.SfxScore == PlayerPrefs.GetFloat("HighScore", 0))
+            {
+                StartCoroutine(WaitSfx());
+
+                if (isHighScore && highScorePlaying)
+                {
+                    ConfettiSfx.Play();
+                    NewHighScoreSfx.Play();
+                    highScorePlaying = false;
+                    ScoreController.SfxScore = 0f;      
+                }
+
+            }
+
+            if (MenuPlayGame.MenuStart)
+            {
+                ConfettiSfx.Stop();
+                NewHighScoreSfx.Stop();
+            }
+        }
+
     }
 
     public void PlayAgainGame()
     {
+
+        ConfettiSfx.Stop();
+        NewHighScoreSfx.Stop();
+
+        SfxCont = true;
+
         if (SFXonOff.controlSfx == false)
         {
           ClickSfx.Play();
         }
-        SfxCont = true;
+
+        isHighScore = false;
         Player.Healt = 50f;
         Spike.spawnCntrl = 1f;
         Player.SpikeControl = false;
@@ -47,5 +80,11 @@ public class PlayAgainButton : MonoBehaviour
         HighScoreTxt.localScale = new Vector3(0.031f, 0.031f, 0.031f);
 
         ControllerMove.rotating = false;
+    }
+    IEnumerator WaitSfx()
+    {
+        isHighScore = true;
+        highScorePlaying = true;
+        yield break;
     }
 }

@@ -17,6 +17,7 @@ public class SFXonOff : MonoBehaviour
     void FixedUpdate()
     {
         
+
     }
 
     public void SfxControll()

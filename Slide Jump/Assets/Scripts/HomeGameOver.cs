@@ -6,6 +6,7 @@ public class HomeGameOver : MonoBehaviour
 {
     public GameObject HighScoreConfetti, magnet;
     [SerializeField] private AudioSource ClickSfx;
+
     void Start()
     {
         
@@ -23,6 +24,8 @@ public class HomeGameOver : MonoBehaviour
         {
             ClickSfx.Play();
         }
+
+        PlayAgainButton.isHighScore = false;
 
         Spike.spawnCntrl = 0f;
         ScoreController.Score = 0f;
