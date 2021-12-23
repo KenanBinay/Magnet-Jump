@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 public class MenuPlayGame : MonoBehaviour
 {
     public Transform player;
-    public GameObject PauseButton, MagnetStart;
+    public GameObject PauseButton, MagnetStart, Hand, Txt;
     public RectTransform HighScoreTxt, GameEndScreen;
+    public Animator handAnim, TxtAnim;
     [SerializeField] private AudioSource ClickSfx;
 
    public static bool MenuStart;
@@ -39,6 +40,8 @@ public class MenuPlayGame : MonoBehaviour
             ClickSfx.Play();
         }
 
+        Hand.SetActive(true);
+        Txt.SetActive(true);
         MagnetStart.SetActive(false);
         PauseButton.SetActive(true);
         MenuStart = false;
@@ -50,6 +53,7 @@ public class MenuPlayGame : MonoBehaviour
         Pause.controlPaused = false;
         GameOverScreen.GameEnd = false;
         Pause.controlPaused = false;
+        ControllerMove.tuto = true;
         ScoreController.SfxScore = 0f;
         ScoreController.GameOverScore = 0f;
         SpikeMovement.SpeedCharacter = 8f;
@@ -63,5 +67,8 @@ public class MenuPlayGame : MonoBehaviour
         ControllerMove.once = 0f;
   
         ControllerMove.rotating = false;
+
+        handAnim.enabled = true;
+        TxtAnim.enabled = true;
     }
 }

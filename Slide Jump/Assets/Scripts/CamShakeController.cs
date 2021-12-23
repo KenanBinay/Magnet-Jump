@@ -8,11 +8,17 @@ public class CamShakeController : MonoBehaviour
 	public float shakeDuration = 0f;
 	public float shakeAmount = 0.7f;
 	public float decreaseFactor = 1.0f;
+	public SpriteRenderer rink;
 
 	Vector3 originalPos;
 
-	void Awake()
-	{
+    private void Start()
+    {
+		Camera.main.fieldOfView = rink.bounds.size.x + Screen.height / Screen.width * 0.5f;
+	}
+
+    void Awake()
+	{	
 		if (camTransform == null)
 		{
 			camTransform = GetComponent(typeof(Transform)) as Transform;

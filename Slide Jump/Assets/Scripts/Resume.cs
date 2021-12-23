@@ -5,6 +5,7 @@ using UnityEngine;
 public class Resume : MonoBehaviour
 {
     public GameObject PauseButton;
+    public Animator handAnim, TxtAnim;
     [SerializeField] private AudioSource ClickSfx;
     void Start()
     {
@@ -23,6 +24,10 @@ public class Resume : MonoBehaviour
         {
             ClickSfx.Play();
         }
+
+        handAnim.enabled = true;
+        TxtAnim.enabled = true;
+
         ControllerMove.rotating = false;
         Pause.controlPaused = false;
     

@@ -27,6 +27,7 @@ public class GameOverScreen : MonoBehaviour
                 GameEnd = true;
                 GameEndScreen.localPosition = Vector3.SmoothDamp(GameEndScreen.localPosition, newPosUp, ref endVelocity, 0.2f);
                 PauseButton.SetActive(false);
+                ControllerMove.tuto = true;
             }
             else
             {

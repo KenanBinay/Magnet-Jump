@@ -5,11 +5,12 @@ using UnityEngine;
 public class PlayAgainButton : MonoBehaviour
 {
     public Transform player;
-    public GameObject Confetti;
+    public GameObject Confetti, Hand, Txt;
     public RectTransform HighScoreTxt;
     [SerializeField] private AudioSource ClickSfx, ConfettiSfx, NewHighScoreSfx;
     public static bool SfxCont, isHighScore, highScorePlaying;
-   
+
+    public Animator handAnim, TxtAnim;
     void Start()
     {
         AudioSource ConfettiSfx = GetComponent<AudioSource>();
@@ -70,6 +71,8 @@ public class PlayAgainButton : MonoBehaviour
         Spike.spawnRate = 4f;
         SpikeMovement.SpeedCharacter = 8f;
         ScoreController.HighScoreAlertTxt = false;
+        Hand.SetActive(true);
+        Txt.SetActive(true);
         Confetti.SetActive(false);
         ScoreController.GameOverScore = 0f;
 
@@ -80,6 +83,9 @@ public class PlayAgainButton : MonoBehaviour
         HighScoreTxt.localScale = new Vector3(0.031f, 0.031f, 0.031f);
 
         ControllerMove.rotating = false;
+
+        handAnim.enabled = true;
+        TxtAnim.enabled = true;
     }
     IEnumerator WaitSfx()
     {

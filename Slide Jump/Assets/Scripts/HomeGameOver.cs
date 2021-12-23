@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HomeGameOver : MonoBehaviour
 {
-    public GameObject HighScoreConfetti, magnet;
+    public GameObject HighScoreConfetti, magnet, Hand, Txt;
     [SerializeField] private AudioSource ClickSfx;
 
     void Start()
@@ -32,6 +32,8 @@ public class HomeGameOver : MonoBehaviour
         Spike.spawnRate = 4f;
         MenuPlayGame.MenuStart = true;
         Pause.controlPaused = false;
+        Hand.SetActive(false);
+        Txt.SetActive(false);
         magnet.SetActive(true);
         HighScoreConfetti.SetActive(false);
     }

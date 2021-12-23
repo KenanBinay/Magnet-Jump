@@ -24,7 +24,7 @@ public class HearthLogoAnimControll : MonoBehaviour
 
                         if (decrease == false)
                         {
-                            FinalHeigh = 0.22f;
+                            FinalHeigh = 5.35f;
                             Speed = 1f;
                             float newScale = Mathf.Lerp(SeedHeight, FinalHeigh, Time.time * Speed);
                             transform.localScale = new Vector3(newScale, newScale, newScale);
@@ -32,11 +32,11 @@ public class HearthLogoAnimControll : MonoBehaviour
                         }
                         if (decrease)
                         {
-                            FinalHeigh = 0.20f;
+                            FinalHeigh = 5f;
                             Speed = 1f;
                             float newScale = Mathf.Lerp(SeedHeight, FinalHeigh, Time.time * Speed);
                             transform.localScale = new Vector3(newScale, newScale, newScale);
-                            if (transform.localScale == new Vector3(0.20f, 0.20f, 0.20f))
+                            if (transform.localScale == new Vector3(5f, 5f, 5f))
                             { decrease = false; }
                         }
                     }
@@ -45,7 +45,7 @@ public class HearthLogoAnimControll : MonoBehaviour
         }
         if (Player.SpikeControl)
         {
-            FinalHeigh = 0.15f;
+            FinalHeigh = 4.70f;
             Speed = 2f;
             float newScale2 = Mathf.Lerp(SeedHeight, FinalHeigh, Time.time * Speed);
             transform.localScale = new Vector3(newScale2, newScale2, newScale2);
@@ -53,7 +53,7 @@ public class HearthLogoAnimControll : MonoBehaviour
         if (Player.healthControl)
         {
 
-            FinalHeigh = 0.25f;
+            FinalHeigh = 5.60f;
             Speed = 2f;
             float newScale = Mathf.Lerp(SeedHeight, FinalHeigh, Time.time * Speed);
             transform.localScale = new Vector3(newScale, newScale, newScale);

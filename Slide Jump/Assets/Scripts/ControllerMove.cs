@@ -14,7 +14,7 @@ public class ControllerMove : MonoBehaviour
     float controlR = 0f;
     public float horizontalSpeed=1f;
 
-    public static bool rotating = false;
+    public static bool rotating = false, tuto;
     [SerializeField] private AudioSource Slide;
     void Start()
     {
@@ -76,7 +76,7 @@ public class ControllerMove : MonoBehaviour
                     if (controlL != 1f)
                     {
                         if (SFXonOff.controlSfx == false) { Slide.Play(); }
-                      
+
                         Vector3 directionL = new Vector3(-180f, 0f, 0f);
 
                         StartCoroutine(RotateObject(Magnet, directionL, 0.3f));
@@ -94,6 +94,7 @@ public class ControllerMove : MonoBehaviour
                         if (controlL != 1f)
                         {
                             if (SFXonOff.controlSfx == false) { Slide.Play(); }
+
                             Vector3 directionL = new Vector3(-180f, 0f, 0f);
 
                             StartCoroutine(RotateObject(Magnet, directionL, 0.3f));
@@ -154,10 +155,12 @@ public class ControllerMove : MonoBehaviour
                     if (controlR != 1)
                     {
                         if (SFXonOff.controlSfx == false) { Slide.Play(); }
+
                         Vector3 directionR = new Vector3(180f, 0f, 0f);
 
                         StartCoroutine(RotateObject(Magnet, directionR, 0.3f));
                         Debug.Log("Right");
+
                     }
                     controlR = 1f;
                 }
@@ -171,6 +174,7 @@ public class ControllerMove : MonoBehaviour
                         if (controlR != 1)
                         {
                             if (SFXonOff.controlSfx == false) { Slide.Play(); }
+
                             Vector3 directionR = new Vector3(180f, 0f, 0f);
 
                             StartCoroutine(RotateObject(Magnet, directionR, 0.3f));
@@ -181,8 +185,9 @@ public class ControllerMove : MonoBehaviour
                     once = 1f;
                 }
             }
-
+           
         }
+      
     }
 
     IEnumerator RotateObject(GameObject gameObjectToMove, Vector3 eulerAngles, float duration)

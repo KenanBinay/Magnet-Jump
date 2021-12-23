@@ -41,51 +41,54 @@ public class ScoreController : MonoBehaviour
         {
             if (Player.Healt <= 0f)
             {
-
-                StartCoroutine(WaitJust());
-
-                if (Waited == true)
+                if (GameOverScreen.GameEnd)
                 {
-                    if (Time.time > scoreSpeedGameOver)
+
+                    StartCoroutine(WaitJust());
+
+                    if (Waited == true)
                     {
-                        scoreSpeedGameOver = Time.time + ScoreRate2;
-                        if (ScoreGameEnd.text != Score.ToString())
+                        if (Time.time > scoreSpeedGameOver)
                         {
-                            ScoreGameEnd.text = GameOverScore.ToString();
-                            GameOverScore++;
-                            ScoreSfx.Play();
-                            ScoreSfx.loop = true;
+                            scoreSpeedGameOver = Time.time + ScoreRate2;
+                            if (ScoreGameEnd.text != Score.ToString())
+                            {
+                                ScoreGameEnd.text = GameOverScore.ToString();
+                                GameOverScore++;
+                                ScoreSfx.Play();
+                                ScoreSfx.loop = true;
+                            }
+                            else if (ScoreGameEnd.text == Score.ToString())
+                            {
+                                ScoreSfx.Stop();
+                                ScoreSfx.loop = false;
+
+                            }
+
                         }
-                        else if (ScoreGameEnd.text == Score.ToString())
+
+                        if (GameOverScore > PlayerPrefs.GetFloat("HighScore", 0))
                         {
-                            ScoreSfx.Stop();
-                            ScoreSfx.loop = false;
-                            
+
+                            HighScoreConfetti.SetActive(true);
+                            NewHighScoreTxt.SetActive(true);
+                            HighScoreAlertTxt = true;
+
+                            if (PlayAgainButton.isHighScore == false)
+                            {
+                                SfxScore = PlayerPrefs.GetFloat("HighScore", 0);
+                            }
+
+                            PlayerPrefs.SetFloat("HighScore", Score);
+                            Highscore.text = PlayerPrefs.GetFloat("HighScore").ToString();
+
+                            Debug.Log("HigScore Saved = " + PlayerPrefs.GetFloat("HighScore"));
+
+                            StartCoroutine(HighScoreScale());
+                            //    StartCoroutine(WaitSfx());
                         }
-                      
+
                     }
-
-                    if (GameOverScore > PlayerPrefs.GetFloat("HighScore", 0))
-                    {              
-
-                        HighScoreConfetti.SetActive(true);
-                        NewHighScoreTxt.SetActive(true);
-                        HighScoreAlertTxt = true;
-
-                        if (PlayAgainButton.isHighScore == false)
-                        {
-                            SfxScore = PlayerPrefs.GetFloat("HighScore", 0);
-                        }
-     
-                        PlayerPrefs.SetFloat("HighScore", Score);
-                        Highscore.text = PlayerPrefs.GetFloat("HighScore").ToString();
-
-                        Debug.Log("HigScore Saved = " + PlayerPrefs.GetFloat("HighScore"));
-                        
-                        StartCoroutine(HighScoreScale());
-                    //    StartCoroutine(WaitSfx());
-                    }
-                  
                 }
             }
         }
