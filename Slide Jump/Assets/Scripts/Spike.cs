@@ -35,14 +35,14 @@ public class Spike : MonoBehaviour
 
                     if (ScoreController.Score >= 100 && ScoreController.Score <= 200)
                     {
-                        SpikeMovement.SpeedCharacter = 16;
+                        SpikeMovement.SpeedCharacter = 25;
                         if (ScoreController.Score >= 144)
                         {
-                            spawnRate = 2f;
+                            spawnRate = 0.5f;
                         }
                         else
                         {
-                            spawnRate = 2.5f;
+                            spawnRate = 1f;
                         }
 
                         int[] valuesM = { 1, 2, 3, 4 };
@@ -50,22 +50,22 @@ public class Spike : MonoBehaviour
                     }
                     if (ScoreController.Score >= 202 && ScoreController.Score <= 402)
                     {
-                        SpikeMovement.SpeedCharacter = 20;
-                        spawnRate = 1.3f;
+                        SpikeMovement.SpeedCharacter = 30;
+                        spawnRate = 0.3f;
                         int[] valuesM = { 1, 2, 3, 4 };
                         nextObject = valuesM[Random.Range(0, valuesM.Length)];
                     }
                     if (ScoreController.Score >= 402 && ScoreController.Score <= 702)
                     {
-                        SpikeMovement.SpeedCharacter = 25;
-                        spawnRate = 1f;
+                        SpikeMovement.SpeedCharacter = 40;
+                        spawnRate = 0.1f;
                         int[] valuesM = { 1, 2, 3, 4 };
                         nextObject = valuesM[Random.Range(0, valuesM.Length)];
                     }
                     if (ScoreController.Score >= 702)
                     {
-                        SpikeMovement.SpeedCharacter = 30;
-                        spawnRate = 0.5f;
+                        SpikeMovement.SpeedCharacter = 50;
+                        spawnRate = 0.05f;
                         int[] valuesM = { 1, 2, 3, 4 };
                         nextObject = valuesM[Random.Range(0, valuesM.Length)];
                     }
