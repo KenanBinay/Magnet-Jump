@@ -6032,6 +6032,7 @@ GameObject:
   - component: {fileID: 575584512}
   - component: {fileID: 575584511}
   - component: {fileID: 575584510}
+  - component: {fileID: 575584515}
   - component: {fileID: 575584514}
   m_Layer: 5
   m_Name: Mute
@@ -6048,8 +6049,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575584508}
   m_LocalRotation: {x: -0, y: -0, z: -4.6566123e-10, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -28.7}
-  m_LocalScale: {x: 0.0381913, y: 0.03728819, z: 0.22318345}
+  m_LocalPosition: {x: 0, y: 0, z: -67.1}
+  m_LocalScale: {x: 0.03366945, y: 0.032873265, z: 0.19675852}
   m_Children:
   - {fileID: 846074495}
   m_Father: {fileID: 1133163660}
@@ -6057,7 +6058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.1, y: 1.6}
+  m_AnchoredPosition: {x: 0.17, y: 1.63}
   m_SizeDelta: {x: 106.333, y: 70.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &575584510
@@ -6121,6 +6122,18 @@ MonoBehaviour:
       - m_Target: {fileID: 575584510}
         m_TargetAssemblyTypeName: SFXonOff, Assembly-CSharp
         m_MethodName: SfxControll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 575584515}
+        m_TargetAssemblyTypeName: AdPause, Assembly-CSharp
+        m_MethodName: AdGive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6264,6 +6277,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &575584515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575584508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63df1b7e375ed644b571a488e2744ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &582834344
 GameObject:
   m_ObjectHideFlags: 0
@@ -12772,6 +12797,7 @@ GameObject:
   - component: {fileID: 922183361}
   - component: {fileID: 922183360}
   - component: {fileID: 922183359}
+  - component: {fileID: 922183364}
   - component: {fileID: 922183363}
   m_Layer: 5
   m_Name: HomeGameOver
@@ -12863,6 +12889,18 @@ MonoBehaviour:
       - m_Target: {fileID: 922183359}
         m_TargetAssemblyTypeName: HomeGameOver, Assembly-CSharp
         m_MethodName: HomeReturn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 922183364}
+        m_TargetAssemblyTypeName: AdPause, Assembly-CSharp
+        m_MethodName: AdGive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13006,6 +13044,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &922183364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922183357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63df1b7e375ed644b571a488e2744ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &931100315
 GameObject:
   m_ObjectHideFlags: 0
@@ -13186,7 +13236,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941726524}
   m_LocalRotation: {x: -0.065209456, y: 0.016305218, z: -0.0026831778, w: 0.99773484}
-  m_LocalPosition: {x: 0, y: 0, z: 6}
+  m_LocalPosition: {x: 0, y: 0, z: 5.2}
   m_LocalScale: {x: 0.02023956, y: 0.020514697, z: 0.018642688}
   m_Children:
   - {fileID: 1517862953}
@@ -13195,7 +13245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -7.472, y: 1.901, z: -0.432}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.1, y: 20.1}
+  m_AnchoredPosition: {x: -0.1, y: 21.2}
   m_SizeDelta: {x: 513.266, y: 75.426}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &941726526
@@ -13964,15 +14014,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978571325}
   m_LocalRotation: {x: -0, y: -0, z: -4.6566123e-10, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -31.5}
-  m_LocalScale: {x: 0.052193873, y: 0.050959643, z: 0.3050121}
+  m_LocalPosition: {x: 0, y: 0, z: -66.3}
+  m_LocalScale: {x: 0.05096184, y: 0.049756747, z: 0.29781234}
   m_Children: []
   m_Father: {fileID: 1133163660}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.16, y: 5.74}
+  m_AnchoredPosition: {x: 0.19, y: 5.5}
   m_SizeDelta: {x: 106.333, y: 70.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &978571327
@@ -15452,6 +15502,7 @@ GameObject:
   - component: {fileID: 1056353323}
   - component: {fileID: 1056353322}
   - component: {fileID: 1056353325}
+  - component: {fileID: 1056353327}
   - component: {fileID: 1056353326}
   m_Layer: 5
   m_Name: Pause
@@ -15526,6 +15577,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1056353325}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: PauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1056353327}
+        m_TargetAssemblyTypeName: AdPause, Assembly-CSharp
+        m_MethodName: AdGive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15684,6 +15747,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1056353327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056353320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63df1b7e375ed644b571a488e2744ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1056558167
 GameObject:
   m_ObjectHideFlags: 0
@@ -19904,6 +19979,7 @@ GameObject:
   - component: {fileID: 1290267285}
   - component: {fileID: 1290267284}
   - component: {fileID: 1290267283}
+  - component: {fileID: 1290267288}
   - component: {fileID: 1290267287}
   m_Layer: 5
   m_Name: HomePause
@@ -19995,6 +20071,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1290267283}
         m_TargetAssemblyTypeName: HomeGameOver, Assembly-CSharp
         m_MethodName: HomeReturn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1290267288}
+        m_TargetAssemblyTypeName: AdPause, Assembly-CSharp
+        m_MethodName: AdGive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20138,6 +20226,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1290267288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290267281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63df1b7e375ed644b571a488e2744ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1293198866
 GameObject:
   m_ObjectHideFlags: 0
