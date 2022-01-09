@@ -18,7 +18,7 @@ public class ScoreController : MonoBehaviour
     [SerializeField] private AudioSource HighScoreSfx, ConfettiSfx, ScoreSfx;
     void Start()
     {
-        PlayerPrefs.SetFloat("HighScore", 10f);
+     //   PlayerPrefs.SetFloat("HighScore", 10f);
         SfxScore = 0f;
         HighScoreTxt.localScale = new Vector3(0.031f, 0.031f, 0.031f);
         NewHighScoreTxt.SetActive(false);
